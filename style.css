@@ -1,0 +1,1925 @@
+/* ======================================================
+   GOOGLE FONT
+====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ======================================================
+   CSS VARIABLES
+====================================================== */
+
+:root{
+
+    --primary:#6366f1;
+    --secondary:#8b5cf6;
+    --success:#16a34a;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+
+    --glass:rgba(255,255,255,.12);
+    --glass-border:rgba(255,255,255,.18);
+
+    --text:#ffffff;
+    --text-light:#d1d5db;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+/* ======================================================
+   RESET
+====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--text);
+
+    min-height:100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #4f46e5,
+            #7c3aed,
+            #0ea5e9
+        );
+
+    overflow-x:hidden;
+
+    animation:fadeIn .8s ease;
+
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#0f172a;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+        linear-gradient(
+            var(--primary),
+            var(--secondary)
+        );
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#8b5cf6;
+
+}
+
+/* ======================================================
+   BACKGROUND
+====================================================== */
+
+.background{
+
+    position:fixed;
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+}
+
+.background span{
+
+    position:absolute;
+
+    display:block;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.25;
+
+    animation:float 18s infinite ease-in-out;
+
+}
+
+.background span:nth-child(1){
+
+    background:#8b5cf6;
+
+    top:-80px;
+    left:-100px;
+
+}
+
+.background span:nth-child(2){
+
+    background:#06b6d4;
+
+    right:-100px;
+    top:100px;
+
+}
+
+.background span:nth-child(3){
+
+    background:#6366f1;
+
+    bottom:-100px;
+    left:20%;
+
+}
+
+.background span:nth-child(4){
+
+    background:#ec4899;
+
+    bottom:100px;
+    right:15%;
+
+}
+
+/* ======================================================
+   GLASS
+====================================================== */
+
+.glass{
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    background:rgba(15,23,42,.35);
+
+    backdrop-filter:blur(16px);
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.logo{
+
+    width:65px;
+
+    height:65px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    font-size:32px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+.logo-area h1{
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.logo-area p{
+
+    color:var(--text-light);
+
+    margin-top:4px;
+
+    font-size:14px;
+
+}
+
+.header-right{
+
+    text-align:right;
+
+}
+
+.header-right h3{
+
+    font-weight:600;
+
+    font-size:18px;
+
+}
+
+.header-right p{
+
+    margin-top:5px;
+
+    color:var(--text-light);
+
+}
+
+/* ======================================================
+   MAIN
+====================================================== */
+
+.container{
+
+    width:min(1400px,92%);
+
+    margin:auto;
+
+    padding:35px 0 80px;
+
+}
+
+/* ======================================================
+   DASHBOARD GRID
+====================================================== */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px,1fr)
+        );
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+/* ======================================================
+   DASHBOARD CARD
+====================================================== */
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:28px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(16px);
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow);
+
+}
+
+.card:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.02);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.35);
+
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            transparent
+        );
+
+    pointer-events:none;
+
+}
+
+.card-icon{
+
+    width:72px;
+
+    height:72px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:18px;
+
+    font-size:34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.25),
+            rgba(255,255,255,.08)
+        );
+
+}
+
+.card-content p{
+
+    color:var(--text-light);
+
+    font-size:15px;
+
+}
+
+.card-content h2{
+
+    margin-top:8px;
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+/* Card Accent */
+
+.balance{
+    border-left:5px solid #3b82f6;
+}
+
+.income{
+    border-left:5px solid #22c55e;
+}
+
+.expense{
+    border-left:5px solid #ef4444;
+}
+
+.transactions{
+    border-left:5px solid #f59e0b;
+}
+
+/* ======================================================
+   CONTENT GRID
+====================================================== */
+
+.content-grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        380px
+
+        1fr;
+
+    gap:30px;
+
+}
+
+/* ======================================================
+   FORM SECTION
+====================================================== */
+
+.form-section{
+
+    padding:30px;
+
+}
+
+.form-section h2{
+
+    margin-bottom:28px;
+
+    font-size:25px;
+
+    font-weight:700;
+
+}
+
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-40px)
+        scale(1.15);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+/* ======================================================
+   FORM
+====================================================== */
+
+#transactionForm{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.input-group label{
+    font-size:14px;
+    font-weight:600;
+    color:var(--text);
+}
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+
+    padding:15px 18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.10);
+
+    color:var(--text);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(14px);
+
+    transition:var(--transition);
+
+    font-size:15px;
+
+}
+
+.input-group input::placeholder{
+    color:rgba(255,255,255,.65);
+}
+
+.input-group select option{
+    color:#111827;
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(99,102,241,.20),
+        0 10px 25px rgba(0,0,0,.18);
+
+    transform:translateY(-2px);
+
+}
+
+.error{
+
+    min-height:18px;
+
+    color:#fecaca;
+
+    font-size:12px;
+
+    font-weight:500;
+
+}
+
+/* ======================================================
+   BUTTON
+====================================================== */
+
+.btn{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:16px;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    transition:var(--transition);
+
+    box-shadow:
+        0 12px 28px rgba(79,70,229,.35);
+
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 35px rgba(79,70,229,.45);
+
+}
+
+.btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* Ripple Effect */
+
+.btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    left:50%;
+    top:50%;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    transform:
+        translate(-50%,-50%);
+
+    transition:.6s;
+
+}
+
+.btn:active::after{
+
+    width:350px;
+    height:350px;
+
+    opacity:0;
+
+}
+
+/* ======================================================
+   RIGHT PANEL
+====================================================== */
+
+.right-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+/* ======================================================
+   FILTER BOX
+====================================================== */
+
+.filter-box{
+
+    padding:25px;
+
+}
+
+.filter-box h2{
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.filters{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(180px,1fr)
+        );
+
+    gap:15px;
+
+}
+
+.filters input,
+.filters select{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.10);
+
+    color:var(--text);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    transition:var(--transition);
+
+}
+
+.filters input::placeholder{
+
+    color:rgba(255,255,255,.65);
+
+}
+
+.filters select option{
+
+    color:#111827;
+
+}
+
+.filters input:focus,
+.filters select:focus{
+
+    border-color:var(--secondary);
+
+    box-shadow:
+        0 0 0 4px rgba(139,92,246,.18);
+
+}
+
+/* ======================================================
+   TRANSACTION WRAPPER
+====================================================== */
+
+.transaction-wrapper{
+
+    padding:25px;
+
+    min-height:600px;
+
+}
+
+.transaction-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.transaction-header h2{
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+
+/* ======================================================
+   TRANSACTION LIST
+====================================================== */
+
+.transaction-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+/* ======================================================
+   SECTION TITLE
+====================================================== */
+
+.section-title{
+
+    margin-bottom:20px;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+
+/* ======================================================
+   GLASS INPUT HOVER
+====================================================== */
+
+input:hover,
+select:hover{
+
+    border-color:rgba(255,255,255,.35);
+
+}
+
+/* ======================================================
+   GLOW EFFECTS
+====================================================== */
+
+.card:hover,
+.glass:hover{
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.28),
+        0 0 20px rgba(255,255,255,.05);
+
+}
+
+/* ======================================================
+   SMALL BADGES
+====================================================== */
+
+.badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:6px 12px;
+
+    border-radius:50px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:.3px;
+
+}
+
+.badge-income{
+
+    background:rgba(34,197,94,.18);
+
+    color:#bbf7d0;
+
+    border:1px solid rgba(34,197,94,.35);
+
+}
+
+.badge-expense{
+
+    background:rgba(239,68,68,.18);
+
+    color:#fecaca;
+
+    border:1px solid rgba(239,68,68,.35);
+
+}
+
+/* ======================================================
+   UTILITIES
+====================================================== */
+
+.mt-20{
+    margin-top:20px;
+}
+
+.mt-30{
+    margin-top:30px;
+}
+
+.mb-20{
+    margin-bottom:20px;
+}
+
+.text-center{
+    text-align:center;
+}
+
+.hidden{
+    display:none !important;
+}
+
+.fade{
+
+    animation:fadeIn .5s ease;
+
+}
+/* ======================================================
+   TRANSACTION CARD
+====================================================== */
+
+.transaction-card{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:18px;
+
+    padding:20px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(16px);
+
+    transition:var(--transition);
+
+    animation:slideUp .45s ease;
+
+}
+
+.transaction-card:hover{
+
+    transform:
+        translateY(-6px)
+        scale(1.01);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.28);
+
+}
+
+/* ======================================================
+   LEFT SIDE
+====================================================== */
+
+.transaction-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    flex:1;
+
+}
+
+.transaction-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:16px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.22),
+            rgba(255,255,255,.08)
+        );
+
+}
+
+.transaction-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+.transaction-info h3{
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+.transaction-info p{
+
+    font-size:13px;
+
+    color:var(--text-light);
+
+}
+
+/* ======================================================
+   RIGHT SIDE
+====================================================== */
+
+.transaction-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
+
+.transaction-amount{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+.amount-income{
+
+    color:#4ade80;
+
+}
+
+.amount-expense{
+
+    color:#fb7185;
+
+}
+
+/* ======================================================
+   DELETE BUTTON
+====================================================== */
+
+.delete-btn{
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    cursor:pointer;
+
+    border-radius:12px;
+
+    background:rgba(239,68,68,.15);
+
+    color:#fecaca;
+
+    font-size:18px;
+
+    transition:var(--transition);
+
+}
+
+.delete-btn:hover{
+
+    background:#ef4444;
+
+    color:#fff;
+
+    transform:
+        rotate(8deg)
+        scale(1.08);
+
+}
+
+/* ======================================================
+   EMPTY STATE
+====================================================== */
+
+.empty-state{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    min-height:420px;
+
+    animation:fadeIn .6s ease;
+
+}
+
+.empty-state h3{
+
+    margin-top:25px;
+
+    font-size:26px;
+
+}
+
+.empty-state p{
+
+    margin-top:10px;
+
+    color:var(--text-light);
+
+}
+
+/* ======================================================
+   WALLET
+====================================================== */
+
+.wallet{
+
+    position:relative;
+
+    width:170px;
+
+    height:120px;
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.28);
+
+    animation:walletFloat 3.5s infinite ease-in-out;
+
+}
+
+.wallet::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:55px;
+
+    height:120px;
+
+    left:0;
+
+    background:rgba(255,255,255,.18);
+
+    border-radius:22px 0 0 22px;
+
+}
+
+.wallet::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:18px;
+
+    top:45px;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    background:#f8fafc;
+
+}
+
+/* ======================================================
+   COIN
+====================================================== */
+
+.coin{
+
+    position:absolute;
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            gold,
+            orange
+        );
+
+    left:58px;
+
+    top:-28px;
+
+    animation:bounceCoin 2.5s infinite;
+
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer{
+
+    margin-top:50px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:rgba(255,255,255,.75);
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(14px);
+
+}
+
+/* ======================================================
+   HOVER GLOW
+====================================================== */
+
+.transaction-card:hover .transaction-icon{
+
+    transform:scale(1.12);
+
+    transition:.35s;
+
+}
+
+.transaction-card:hover .transaction-info h3{
+
+    color:#fff;
+
+}
+
+/* ======================================================
+   CARD ENTRY
+====================================================== */
+
+.card{
+
+    animation:slideUp .55s ease;
+
+}
+
+/* ======================================================
+   REMOVE ANIMATION
+====================================================== */
+
+.remove{
+
+    animation:removeCard .35s forwards;
+
+}
+
+/* ======================================================
+   KEYFRAMES
+====================================================== */
+
+@keyframes slideUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+@keyframes removeCard{
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translateX(120px);
+
+    }
+
+}
+
+@keyframes walletFloat{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-14px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+@keyframes bounceCoin{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-14px)
+            rotate(180deg);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(360deg);
+
+    }
+
+}
+
+/* ======================================================
+   DASHBOARD NUMBER ANIMATION
+====================================================== */
+
+.card-content h2{
+
+    animation:numberFade .5s ease;
+
+}
+
+@keyframes numberFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(8px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ======================================================
+   RESPONSIVE DESIGN - LARGE TABLETS
+====================================================== */
+
+@media (max-width:1200px){
+
+    .container{
+        width:95%;
+    }
+
+    .content-grid{
+        grid-template-columns:320px 1fr;
+        gap:25px;
+    }
+
+    .dashboard{
+        gap:20px;
+    }
+
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN - TABLETS
+====================================================== */
+
+@media (max-width:992px){
+
+    .header{
+
+        padding:18px 5%;
+
+        flex-direction:column;
+
+        gap:20px;
+
+        text-align:center;
+
+    }
+
+    .logo-area{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .header-right{
+
+        text-align:center;
+
+    }
+
+    .content-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .form-section{
+
+        order:1;
+
+    }
+
+    .right-panel{
+
+        order:2;
+
+    }
+
+    .dashboard{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(220px,1fr)
+            );
+
+    }
+
+}
+
+/* ======================================================
+   RESPONSIVE DESIGN - MOBILE
+====================================================== */
+
+@media (max-width:768px){
+
+    .container{
+
+        width:94%;
+
+        padding:25px 0 60px;
+
+    }
+
+    .dashboard{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+    }
+
+    .card-content h2{
+
+        font-size:28px;
+
+    }
+
+    .logo{
+
+        width:58px;
+
+        height:58px;
+
+        font-size:28px;
+
+    }
+
+    .logo-area h1{
+
+        font-size:24px;
+
+    }
+
+    .filters{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .transaction-card{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:18px;
+
+    }
+
+    .transaction-right{
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+
+    .transaction-left{
+
+        width:100%;
+
+    }
+
+    .wallet{
+
+        transform:scale(.9);
+
+    }
+
+}
+
+/* ======================================================
+   SMALL MOBILE
+====================================================== */
+
+@media (max-width:480px){
+
+    .header{
+
+        padding:16px;
+
+    }
+
+    .card{
+
+        gap:14px;
+
+        padding:18px;
+
+    }
+
+    .card-icon{
+
+        width:58px;
+
+        height:58px;
+
+        font-size:28px;
+
+    }
+
+    .card-content h2{
+
+        font-size:24px;
+
+    }
+
+    .form-section{
+
+        padding:22px;
+
+    }
+
+    .filter-box{
+
+        padding:22px;
+
+    }
+
+    .transaction-wrapper{
+
+        padding:20px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+    .transaction-icon{
+
+        width:52px;
+
+        height:52px;
+
+        font-size:24px;
+
+    }
+
+    .transaction-info h3{
+
+        font-size:16px;
+
+    }
+
+    .transaction-amount{
+
+        font-size:18px;
+
+    }
+
+    footer{
+
+        font-size:14px;
+
+        padding:22px;
+
+    }
+
+}
+
+/* ======================================================
+   INPUT AUTOFILL FIX
+====================================================== */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus{
+
+    -webkit-text-fill-color:#fff;
+
+    transition:background-color 9999s;
+
+}
+
+/* ======================================================
+   SELECTION
+====================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+/* ======================================================
+   FOCUS ACCESSIBILITY
+====================================================== */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible{
+
+    outline:2px solid #ffffff;
+
+    outline-offset:3px;
+
+}
+
+/* ======================================================
+   TRANSITIONS
+====================================================== */
+
+button,
+input,
+select,
+.card,
+.transaction-card,
+.delete-btn,
+.glass{
+
+    transition:all .35s ease;
+
+}
+
+/* ======================================================
+   UTILITIES
+====================================================== */
+
+.w-100{
+
+    width:100%;
+
+}
+
+.d-flex{
+
+    display:flex;
+
+}
+
+.align-center{
+
+    align-items:center;
+
+}
+
+.justify-between{
+
+    justify-content:space-between;
+
+}
+
+.gap-10{
+
+    gap:10px;
+
+}
+
+.gap-20{
+
+    gap:20px;
+
+}
+
+.rounded{
+
+    border-radius:18px;
+
+}
+
+.shadow{
+
+    box-shadow:var(--shadow);
+
+}
+
+.text-success{
+
+    color:#4ade80;
+
+}
+
+.text-danger{
+
+    color:#fb7185;
+
+}
+
+.text-muted{
+
+    color:var(--text-light);
+
+}
+
+/* ======================================================
+   LOADING SHIMMER (OPTIONAL)
+====================================================== */
+
+.shimmer{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.shimmer::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-150%;
+
+    width:50%;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.18),
+            transparent
+        );
+
+    animation:shimmer 2s infinite;
+
+}
+
+@keyframes shimmer{
+
+    100%{
+
+        left:150%;
+
+    }
+
+}
+
+/* ======================================================
+   PRINT
+====================================================== */
+
+@media print{
+
+    body{
+
+        background:#fff;
+
+        color:#000;
+
+    }
+
+    .background,
+    .header,
+    .filter-box,
+    footer,
+    .btn,
+    .delete-btn{
+
+        display:none !important;
+
+    }
+
+    .glass{
+
+        background:#fff;
+
+        border:1px solid #ccc;
+
+        box-shadow:none;
+
+    }
+
+}

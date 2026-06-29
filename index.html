@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Animated Background -->
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo-area">
+            <div class="logo">💰</div>
+
+            <div>
+                <h1>Expense Tracker</h1>
+                <p>Your Personal Finance Dashboard</p>
+            </div>
+        </div>
+
+        <div class="header-right">
+
+            <div class="welcome">
+                <h3>Welcome Back 👋</h3>
+                <p id="currentDate"></p>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="container">
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section class="dashboard">
+
+            <div class="card balance">
+
+                <div class="card-icon">
+                    💳
+                </div>
+
+                <div class="card-content">
+                    <p>Total Balance</p>
+                    <h2 id="balance">₹0</h2>
+                </div>
+
+            </div>
+
+            <div class="card income">
+
+                <div class="card-icon">
+                    📈
+                </div>
+
+                <div class="card-content">
+                    <p>Total Income</p>
+                    <h2 id="income">₹0</h2>
+                </div>
+
+            </div>
+
+            <div class="card expense">
+
+                <div class="card-icon">
+                    📉
+                </div>
+
+                <div class="card-content">
+                    <p>Total Expense</p>
+                    <h2 id="expense">₹0</h2>
+                </div>
+
+            </div>
+
+            <div class="card transactions">
+
+                <div class="card-icon">
+                    📋
+                </div>
+
+                <div class="card-content">
+                    <p>Total Transactions</p>
+                    <h2 id="transactions">0</h2>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CONTENT GRID ================= -->
+
+        <section class="content-grid">
+
+            <!-- ================= FORM ================= -->
+
+            <section class="glass form-section">
+
+                <h2>➕ Add Transaction</h2>
+
+                <form id="transactionForm">
+
+                    <div class="input-group">
+
+                        <label for="title">Transaction Title</label>
+
+                        <input
+                            type="text"
+                            id="title"
+                            placeholder="Enter title">
+
+                        <small class="error" id="titleError"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="amount">Amount</label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            placeholder="0">
+
+                        <small class="error" id="amountError"></small>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="category">Category</label>
+
+                        <select id="category"></select>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="type">Transaction Type</label>
+
+                        <select id="type">
+
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label for="date">Date</label>
+
+                        <input
+                            type="date"
+                            id="date">
+
+                    </div>
+
+                    <button class="btn" type="submit">
+                        Add Transaction
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- ================= RIGHT SIDE ================= -->
+
+            <section class="right-panel">
+
+                <!-- ================= FILTERS ================= -->
+
+                <div class="glass filter-box">
+
+                    <h2>🔍 Search & Filters</h2>
+
+                    <div class="filters">
+
+                        <input
+                            type="text"
+                            id="search"
+                            placeholder="Search transaction...">
+
+                        <select id="filterCategory">
+                            <option value="All">All Categories</option>
+                        </select>
+
+                        <select id="filterType">
+
+                            <option value="All">All Types</option>
+                            <option value="Income">Income</option>
+                            <option value="Expense">Expense</option>
+
+                        </select>
+
+                        <select id="sort">
+
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                            <option value="high">Highest Amount</option>
+                            <option value="low">Lowest Amount</option>
+                            <option value="az">A-Z</option>
+                            <option value="za">Z-A</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= TRANSACTION LIST ================= -->
+
+                <div class="glass transaction-wrapper">
+
+                    <div class="transaction-header">
+
+                        <h2>📑 Transactions</h2>
+
+                    </div>
+
+                    <!-- Empty State -->
+
+                    <div id="emptyState" class="empty-state">
+
+                        <div class="empty-illustration">
+
+                            <div class="wallet">
+
+                                <div class="coin"></div>
+
+                            </div>
+
+                        </div>
+
+                        <h3>No Transactions Yet</h3>
+
+                        <p>Start tracking your expenses.</p>
+
+                    </div>
+
+                    <!-- Dynamic List -->
+
+                    <div
+                        id="transactionList"
+                        class="transaction-list">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            Built with ❤️ using HTML, CSS & JavaScript
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
